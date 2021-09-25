@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    'userInput userInput'
+    'activeProjects finishedProjects';
+  justify-content: center;
+  grid-gap: 20px;
+  width: 100vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 0.2rem 0.4rem;
+  width: 100%;
+  max-width: 30rem;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  background: #fff5f9;
+}
+
+button {
+  font: inherit;
+  background: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+  border: 1px solid #fc6076;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.75rem 1rem;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover,
+button:active {
+  background: #ff9a44;
+  border-color: #ff9a44;
+}
+
+.projects {
+  margin: 1rem;
+  border: 1px solid #fc6076;
+  border-radius: 5px;
+}
+
+.projects header {
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#active-projects {
+  grid-area: activeProjects;
+  height: min-content;
+}
+
+#finished-projects {
+  border-color: #3d3393;
+  grid-area: finishedProjects;
+  height: min-content;
+}
+
+#active-projects header {
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+}
+
+#finished-projects header {
+  background-image: linear-gradient(
+    60deg,
+    #3d3393 0%,
+    #2b76b9 37%,
+    #2cacd1 65%,
+    #35eb93 100%
+  );
+}
+
+.projects h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.projects li {
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 1rem;
+  background: #fff;
+}
+
+.projects li:hover {
+  cursor: grab;
+}
+
+.projects li h2 {
+  color: hsl(352, 92%, 63%);
+  margin: 0.5rem 0;
+}
+
+#finished-projects li h2 {
+  color: #3d3393;
+}
+
+.projects li h3 {
+  color: #575757;
+  font-size: 1rem;
+}
+
+.project li p {
+  margin: 0;
+}
+
+.droppable {
+  background:#f4f4f4;
+}
+
+#finished-projects .droppable {
+  background:#dce8f7;
+}
+
+#user-input {
+  grid-area: userInput;
+  width: 500px;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #fc6076;
+  border-radius: 5px;
+  background: #f7f7f7;
+}
+
+@media (max-width: 720px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #user-input {
+    width: 90vw;
+  }
+
+  .projects {
+    width: 90vw;
+  }
+}
