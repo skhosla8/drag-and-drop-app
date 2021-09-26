@@ -36,7 +36,7 @@ h1 {
   width: 90vw;
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #f7f7f7;
+  background: linear-gradient(to top, #f3e7e9 0%, #f7f7f7 99%, #f7f7f7 100%);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 0 0 2rem;
@@ -66,7 +66,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  background: #fff6ee;
+  background: #f3e7e9;
 }
 
 button {
@@ -172,6 +172,8 @@ button:active {
 
 .droppable {
   background: #ffd8cc;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #finished-projects .droppable {
